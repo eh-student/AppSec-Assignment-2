@@ -49,8 +49,8 @@ namespace FreshFarmMarket.Services
             var sendResult = await client.SendMessageAsync(msg);
 
             _logger.LogInformation(sendResult.Status == PostmarkStatus.Success
-                                   ? $"Email to {toEmail} queued successfully!"
-                                   : $"Failure Email to {toEmail}");
+                                   ? $"Email queued successfully!"
+                                   : $"Email failed to send.");
         }
     }
 }
