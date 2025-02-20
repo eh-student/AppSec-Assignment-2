@@ -1,0 +1,20 @@
+﻿@page
+@model ErrorModel
+@{
+    ViewData["Title"] = Model.ErrorViewModel.Title ?? "Error";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-danger">@Model.ErrorViewModel.StatusCode</h1>
+    <h2 class="text-danger">@Model.ErrorViewModel.Title</h2>
+    <p>@Model.ErrorViewModel.Message</p>
+
+    @if (Model.ErrorViewModel.ShowRequestId)
+    {
+        <p>
+            <strong>Request ID:</strong> <code>@Model.ErrorViewModel.RequestId</code>
+        </p>
+    }
+
+    <a asp-page="/Index" class="btn btn-primary mt-3">Return Home</a>
+</div>
